@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -58,7 +59,23 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       // processRequest(request, response);
+       
+       response.setContentType("text/html");
+       PrintWriter out  = response.getWriter();
+       request.getRequestDispatcher("link.html").include(request, response);  
+       
+       String name = request.getParameter("name");
+       String password = request.getParameter("password");
+       
+        if (password.equals("1234")) {
+            out.print("welcome , " +name);
+            HttpSession session = request.getSession();
+            session.setAttribute("name",name);
+        }else{
+        out.print("sorry login failed!");
+        request.getRequestDispatcher("login.html").include(request, response);
+        }
     }
 
     /**
