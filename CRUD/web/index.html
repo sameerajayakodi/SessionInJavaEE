@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Add New Employee</h1>
+      <form action="SaveServlet" method="POST">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="name" id="" /></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="text" name="password" id="" /></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" name="email" id="" /></td>
+        </tr>
+        <tr>
+          <td>Country:</td>
+          <td>
+              <select name="country" id="" style="width:220px;">
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+              <option>Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Save Employee" /></td>
+        </tr>
+      </table>
+          </form>
+    </div>
+      <a href="ViewServlet">view employees</a>  
+  </body>
+</html>
