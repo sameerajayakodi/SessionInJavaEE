@@ -71,7 +71,7 @@ public class PofileServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session != null) {
             String name =(String) session.getAttribute("name");
-            out.print("Hello , " +name + " Welcome to Profile");
+            out.print( "<h2 class='font-mono text-2xl pt-5 pb-5 font-bold text-center bg-gray-800 text-white  '>Hello, " +name+" Welcome To the Profile " + "</h2>");
         } else {
             out.println("please login first");
             request.getRequestDispatcher("login.html").include(request, response);
