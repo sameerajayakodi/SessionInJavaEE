@@ -69,7 +69,7 @@ public class LoginServlet extends HttpServlet {
        String password = request.getParameter("password");
        
         if (password.equals("1234")) {
-            out.print("welcome , " +name);
+            out.print( "<h1 class='font-mono text-4xl pt-5 pb-5 font-bold text-center bg-gray-800 text-white  '>Welcome , " +name+ "</h1>");
             HttpSession session = request.getSession();
             session.setAttribute("name",name);
         }else{
